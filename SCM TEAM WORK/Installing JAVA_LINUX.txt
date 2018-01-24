@@ -1,0 +1,11 @@
+How to install Java (JDK) on REDHAT???????????????????????????
+
+1. Download the tar file from internet.
+2. Untar the file where you want to install JDK
+   example:
+   /VNL-CMBUILD/SCM-SW-INSTALL
+3. Now set the JAVA_HOME and PATH variables as:
+   export JAVA_HOME=/VNL-CMBUILD/SCM-SW-INSTALL/jdk1.6.0_11
+   export PATH=$JAVA_HOME/bin:$PATH
+   
+Java is now installed on your machine.

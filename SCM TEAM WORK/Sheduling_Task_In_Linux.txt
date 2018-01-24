@@ -1,0 +1,28 @@
+-->
+crontab
+this is the unix command that is used to schedule the tasks in linux/unix
+
+1.
+crontab -l
+this will list down all the scheduled process in linux/unix
+
+2. 
+crontab -e
+this will helps us to edit the crontab jobs that we want to perform
+example: if we are givivng crontab -e then we will get these scheduled jobs:
+
+ * * * * * /VNL-BHARAT/SCM-SW-INSTALL/apache-2.2.10/htdocs/cmw/Database/ServiceManager.sh
+43 7 * * * /home/CMIS/apache-tomcat-6.0.29/webapps/CMIS/scripts/chck_all_status_email.sh
+* 23 * * * /home/CMIS/apache-tomcat-6.0.29/webapps/CMIS/scripts/space_cleanup_all.sh
+43 6 * * * /VNL-BHARAT/SCM-SW-INSTALL/apache-2.2.10/htdocs/PHP_CB/it_helpdesk_database_sync_scripts/it_helpdesk_database_sync.sh
+45 6 * * * /VNL-BHARAT/SCM-SW-INSTALL/apache-2.2.10/htdocs/PHP_CB/it_helpdesk_database_sync_scripts/users_secondary_sync.sh
+10 10 * * * /home/CMIS/apache-tomcat-6.0.29/webapps/back_up_script.ksh
+
+There are six fields in crontab syntax and the use of each one of it is mentioned as below:
+
+1. Minutes
+2. Hour
+3. Day Of Month
+4. Month Number
+5. Day Of Week
+6. Command That We Want To Execute

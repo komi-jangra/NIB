@@ -1,0 +1,16 @@
+cd C:\sahil_ahuja
+wget http://www.franklintempletonindia.com/en_IN/investor/funds/price-snapshot
+grep "Franklin India High Growth Companies Fund - Growth" price-snapshot > abcd.txt
+cat abcd.txt | cut -d "=" -f9 | cut -d ">" -f2 |cut -d "<" -f1
+start "" cmd /c "echo Are Bhai Tje Profit Ho ra Hai Bech De!&echo(&pause"
+rm price-snapshot
+
+
+
+ This is the content of file abcd.txt
+
+<td class="left" data-s="Franklin India High Growth Companies Fund - Growth"><b><a analyticclass="analyseLink" parameters="['price-snapshot']" 
+href="/en_IN/investor/funds/fund-overview/11624/Franklin-India-High-Growth-Companies-Fund">Franklin India High Growth Companies Fund - Growth
+</a></b></td><td data-s="INR">INR</td><td data-s="08/04/2015">08/04/2015
+</td><td data-s="30.6307">30.6307</td><td data-s="0.1273">0.1273</td><td><a analyticclass="analyseLink" parameters
+="['price-snapshot']" href="/en_IN/investor/funds/performance/11624/Franklin-India-High-Growth-Companies-Fund">Performance</a></td>

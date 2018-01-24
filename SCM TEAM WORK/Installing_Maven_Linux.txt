@@ -1,0 +1,70 @@
+Procedure to install maven on linux is described as:
+
+1. We must hve jdk-1.5 or later installed on our system.
+2. Dowload the tarfile for mavnen from path https://archive.apache.org/dist/maven/binaries/apache-maven-2.0.11-bin.tar.gz
+3. Untar the file where we need to install the maven.
+4. Now we have to configure the enviornment variables for maven by edditing the ~/.bashrc file.
+5. Open this file and add 
+export M2_HOME=/usr/local/apache-maven/apache-maven-2.2.1
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+6. Save this file and run the command as : source ~/.bashrc
+7. Verify that if maven is installed or not by using the command mvn --version
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+POM (Project Object Model)
+
+1. This is the fundamental Unit of work in Maven.
+2. It is an xml file and resides in the base directory of the project as pom.xml.
+3. The POM contains information about the project and various configuration detail used by Maven to build the project(s).
+4. POM also contains the goals and plugins.
+
+Process:-
+ While executing a task or goal, Maven looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the goal.
+
+Configuration:-
+ome of the configuration that can be specified in the POM are following:
+1. project dependencies
+2. plugins
+3. goals
+4. build profiles
+5. project version
+6. developers
+7. mailing list
+
+There should be a single pom.xml file for every project
+1. All POM files require the project element and three mandatory fields: groupId, artifactId,version.
+2. Projects notation in repository is groupId:artifactId:version.
+3. Root element of POM.xml is project and it has three major sub-nodes :
+		a). grouId
+		b). artifactId
+		c). version.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+Super POM
+1. All the POM inherits the configurations from a common POM called as Super POM.
+2. Super POM contains values inherited by default.
+3. So there are basically two configurations:- a). Default configuraion (Super POM)  b). Project configuration (Project POM).
+4. Maven uses this effective POM to execute a relevant goal.
+5. An easy way to look at the default configurations of the super POM is by running the following command: mvn help:effective-pom
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Build Lifecycle
+A Build Lifecycle is a well defined sequence of phases which define the order in which the goals are to be executed.
+As an example a typical Maven Build Lifecycle consists of phases:
+1. prepare-resources
+2. compile
+3. package
+4. install
+
+There are always pre and post phase that must be run prior to or after a particular phase.
+Maven has following three standard lifecycles:
+1. clean
+2. default(or build)
+3. site
+
+The order of execution depends on the order in which the goal(s) and the build phase(s) are invoked. For example:
+mvn clean dependency:copy-dependencies package
+In this command clean phase will be executed first and then the dependency:copy-dependencies goal will be executed, and finally package phase will be executed.

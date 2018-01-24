@@ -1,0 +1,28 @@
+CYGWIN+AF8-WINDOWS SETTINGS
+
+
+Step+AKA-1
+Click the Windows +ACI-Start+ACI- button, type +ACI-cmd+ACI- in the Search field and press +ACI-Enter+ACI- to launch the command prompt.
+Step+AKA-2
+Use the change directory command to navigate to the +ACI-cygwin+AFw-bin+ACI- folder. If that folder is in +ACI-C:+AFw-Programs Files,+ACI- type +ACI-c:+AFw-program files+AFw-cygwin+AFw-bin.+ACI-
+Step+AKA-3
+Type +ACI-bash.exe+ACI- and press +ACI-Enter+ACI- to switch to the Cygwin command line.
+Step+AKA-4
+Type the name of the program and press +ACI-Enter+ACI- to run it in Cygwin.
+
+.Find out where your Cygwin installation is on your hard drive and copy the path to its +AFw-bin subfolder (usually C:+AFw-Cygwin+AFw-bin).
+.Open the Control Panel, hit +ACI-System and Maintenance,+ACI- then +ACI-System,+ACI- then +ACI-Advanced System Settings+ACI- on the left.
+.Click the +ACI-Environment Variables+ACI- button at the bottom of the new window.
+.Scroll through the +ACI-System Variables+ACI- list at the bottom of this window until you find the line for +ACI-Path,+ACI- then select it and hit +ACI-Edit.+ACI-
+.Add a semi-colon to the end of the +ACI-Variable Value+ACI- line (if it's not there), then add the path to Cygwin's bin directory. Hit OK on this and any windows opened along the way.
+
+ftp://ftp.perforce.com/perforce/tools/benchmarks/browse/doc/cygwin.html
+
+
+VIM not working in CMD:::
+Firstly?vi?isn't installed by default and is not available on windows. A very good emulation of vi is available called?vim, I assume for the rest of this that you have vim installed.
+What you want to do is launch?vim.exe?from the command line without specifying the full path to the file. To do that you need to add the full path to the file's containing folder to the?PATH?environment variable. Here's how to do that:
+Go to?computer?in windows explorer. Then right click on the background and select?propertiesThis should bring you to the system folder of the control panel.
+In the left hand pane click?Advanced system settings, click the environment variables button at the bottom of the new window that pops up.
+The top pane of this window should be titled?User variables for <Your Username>. Scroll through this list of user variables, and find one named?path?(capitalisation not important) and edit it. If there isn't a path variable on the list, then click the new button under the list to create a new variable, and name it path.
+If you're creating a new path variable, simply paste the path to the containing folder as the value of the user variable. if you're editing an existing path variable you need to add a semi-colon?;?character immediately followed by the path to your vim installation. the path to your vim instalation proably looks something like this:?C:\Program Files (x86)\Vim\vim74
